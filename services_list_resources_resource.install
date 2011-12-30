@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * .install file for services_list_resources_resource with
+ * all needed hooks implementations to install/uninstall this module.
+ *
+ */

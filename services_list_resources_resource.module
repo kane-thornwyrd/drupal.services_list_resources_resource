@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * .module file for services_list_resources_resource
+ * with nearly all hooks implementations.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function services_list_resources_resource_permission() {
+  return array(
+    'view resources listing' => array(
+      'title' => t('View the Resources listing'),
+      'restrict access' => TRUE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_services_resources().
+ */
+function services_list_resources_resource_services_resources() {
+  return array(
+    'resources' => array(
+      'index' => array(
+        'file' => array('type' => 'inc', 'module' => 'services_list_resources_resource', 'name' => 'resources/resources'),
+        'help' => t('List all the Web Services availables in a WSDL-like Way'),
+        'callback' => 'resources_listing',
+        'access callback' => 'resources_resource_access',
+        'access arguments' => array('listing'),
+        'access arguments append' => TRUE,
+      ),
+    ),
+  );
+}

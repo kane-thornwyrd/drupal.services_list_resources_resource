@@ -1,1 +1,9 @@
-name = Services list Resources Resource
+name = "Services list Resources Resource"
+description = "Allow to serve a Resource that list all the ressources available by the Services' ReST server."
+core = 7.x
+package = Services
+php = 5.3
+dependencies[] = services (>7.x-3.0)
+dependencies[] = rest_server (>7.x-3.0)
+;files[] =
+;configure =
